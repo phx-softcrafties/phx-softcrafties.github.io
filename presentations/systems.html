@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+        <div class="slides">
+            <section>
+                <h1>
+                    <br>
+                </h1>
+        <h1>Systems</h1>
+        <div>Clean Code, Chapter 11</div>
+        <p>
+                <br>
+            </p>
+        <p>
+            <font style="font-size: 24px;">
+                <font color="#cccccc">presented by: </font>Matt Cordial</font>
+            </p>
+        </section>
+        <section>
+            <h1>
+                <br>
+            </h1>
+        <h1>overview</h1>
+        <div>
+            <div>
+                <br>
+            </div>
+        </div>
+        <div style="text-align: left; position: absolute; width: 603px; height: 184px; z-index: 4; left: 189px; top: 317px;" class="absolute-element">
+        <ul>
+        <li>
+        <i>Separating concerns</i>
+        </li>
+        <li>
+        <i>Handling growth and evolution</i>
+        </li>
+        <li>
+        <i>Tools / techniques / strategies</i>
+        </li>
+        <li>
+        <i>Reasoning about your architecture</i>
+        </li>
+        </ul>
+        </div>
+        </section>
+        <section>
+            <h2>
+                <br>
+            </h2>
+        <h2>
+            <span>
+                <br>
+            </span>
+        </h2>
+        <h1>
+        <span>Construction&nbsp;</span>
+        </h1>
+        <p>
+        <i>vs.&nbsp;</i>
+        </p>
+        <p>
+        <br>
+        </p>
+        <h1>Use</h1>
+        <div>
+        <br>
+        </div>
+        </section>
+        <section>
+            <p>
+        </p>
+        <div>
+        <br>
+        </div>
+        <h2>Separate those Concerns</h2>
+        <div>
+        <br>
+        </div>
+        <p>
+        </p>
+        <ul>
+        <li class="fragment" data-fragment-index="0">
+        <i>Application setup is a concern</i>
+        </li>
+        <li class="fragment" data-fragment-index="1">
+        <i>A running app doesn't need to know about setup</i>
+        </li>
+        <li class="fragment" data-fragment-index="2">
+        <i>Avoid ad-hoc initialization&nbsp;</i>
+        </li>
+        <li class="fragment" data-fragment-index="3">
+        <i>Don't scatter setup across the system&nbsp;</i>
+        </li>
+        <li class="fragment" data-fragment-index="4">
+        <i>Find consistent strategy for resolving dependencies</i>
+        </li>
+        </ul>
+        <div style="text-align: left;">
+        <br>
+        </div>
+        <h2>
+        <br>
+        </h2>
+        </section>
+        <section>
+            <h2 style="font-style: normal; font-variant: normal;">WHY?</h2>
+        <div>
+            <br>
+        </div>
+        <p>
+        </p>
+        <ul>
+        <li class="fragment" data-fragment-index="0">
+        <i>Avoids setup logic intermixing with runtime logic</i>
+        </li>
+        <li class="fragment" data-fragment-index="1">
+        <i>Testability</i>
+        </li>
+        <li class="fragment" data-fragment-index="2">
+        <i>Flexibility</i>
+        </li>
+        </ul>
+        <h2>
+        </h2>
+        <p style="font-style: normal; font-variant: normal; text-transform: none; font-size: 36px;">
+        </p>
+        <ul>
+        <br>
+        </ul>
+        </section>
+        <section>
+            <h2>How?</h2>
+        <div>
+            <br>
+        </div>
+        <p>
+        </p>
+        <ul>
+        <li class="fragment" data-fragment-index="0">
+        <i>Wire everything in "main"</i>
+        </li>
+        <li class="fragment" data-fragment-index="1">
+        <i>Factories</i>
+        </li>
+        <ul>
+        <li class="fragment" data-fragment-index="2">
+            <i>control when objects are created</i>
+        </li>
+        </ul>
+        <li class="fragment" data-fragment-index="3">
+        <i>Dependency Injection</i>
+        </li>
+        </ul>
+        </section>
+        <section>
+            <h2>Dependency Injection</h2>
+        <div>
+            <br>
+        </div>
+        <p>
+        </p>
+        <ul>
+        <li class="fragment" data-fragment-index="0">
+        <i>Dedicated objects for secondary responsibilities</i>
+        </li>
+        <li class="fragment" data-fragment-index="1">
+        <i>Classes don't resolve their own dependencies</i>
+        </li>
+        <li class="fragment" data-fragment-index="2">
+        <i>Actual objects used specified by a config&nbsp;</i>
+        </li>
+        </ul>
+        </section>
+        <section>
+            <h2>
+                <br>
+            </h2>
+        <h2>
+            <br>
+        </h2>
+        <h2>
+        <br>
+        </h2>
+        <h1>Scaling</h1>
+        </section>
+        <section>
+            <h2>
+                <br>
+            </h2>
+        <h3>software systems can grow incrementally</h3>
+        <div>
+            <br>
+        </div>
+        <h1 class="fragment" data-fragment-index="0">
+        <font color="#ff0000">IF</font>
+        </h1>
+        <div>
+        <font color="#ff0000">
+            <br>
+        </font>
+        </div>
+        <h3 class="fragment" data-fragment-index="1">
+        <font color="#ffffff">
+            <span>you separate Concerns</span>
+        </font>
+        </h3>
+        </section>
+        <section>
+            <h2>
+                <br>
+                </h2>
+        <h2>The Cautionary Tale of EJB</h2>
+                <ul>
+                    <li class="fragment">
+                        <i>
+                        <span>Concerns separated in some areas</span>
+                        <br>
+                    </i>
+                </li>
+
+        <li class="fragment" data-fragment-index="1">
+                <span>
+                    <i>Security, persistence, and transaction strategies declared in deployment descriptors</i>
+                </span>
+            </li>
+        <li class="fragment" data-fragment-index="2">
+            <font color="#ff0000">HOWEVER</font>
+        </li>
+        <li class="fragment" data-fragment-index="3">
+        <span>
+            <i>Business logic coupled to the app container</i>
+        </span>
+        </li>
+        <li class="fragment" data-fragment-index="4">
+        <span>
+            <i>Testing very difficult</i>
+        </span>
+        </li>
+        <li class="fragment" data-fragment-index="5">
+        <i>
+        <span>Abstractions offer little reus</span>
+        <span>e</span>
+        </i>
+        </li>
+        </ul>
+        </section>
+        <section>
+            <h2>Cross cutting concerns</h2>
+        <div>
+        <span style="text-align: left;">&nbsp;</span>
+            <br>
+        </div>
+        <div>
+            <ul>
+        <li class="fragment">
+            <i>Individual components (e.g. persistence components and domain logic) may be modular but they intersect</i>
+        </li>
+        <li class="fragment">
+        <i>
+        <span style="font-size: 36px; font-variant: normal;">Implementation is required across many objects</span>
+        <br>
+        </i>
+        </li>
+        <li class="fragment">
+        <i>Would rather delegate to a framework where behavior modification is made noninvasively .</i>
+        </li>
+        </ul>
+        </div>
+        </section>
+        <section>
+            <h2>
+                <br>
+            </h2>
+        <h2>
+            <br>
+            </h2>
+        <h2>
+        <span style="font-size: 135.72px;">aspect oriented</span>
+        </h2>
+        <h2>
+            <span style="font-size: 135.72px;">Programming</span>
+            <br>
+        </h2>
+        </section>
+        <section>
+            <h2>Java proxies</h2>
+        <div class="fragment" data-fragment-index="0">
+            <i>meh</i>
+        </div>
+        <div>
+        <br>
+        </div>
+        <h2>aop frameworks</h2>
+        <div>
+        <ul>
+        <li class="fragment" data-fragment-index="1">
+        <i>Spring,&nbsp;<span>Jboss,&nbsp;</span>
+        <span>AspectJ</span>
+        </i>
+        </li>
+        <li class="fragment" data-fragment-index="2">
+        <span>
+            <i>Reduce boilerplate</i>
+        </span>
+        </li>
+        <li class="fragment" data-fragment-index="3">
+        <i>Handle the mechanics of proxies</i>
+        </li>
+        <li class="fragment" data-fragment-index="4">
+        <i>Business logic</i>
+        </li>
+        <ul>
+        <li class="fragment" data-fragment-index="5">
+        <span>
+            <i>POJOs, Config files, APIs</i>
+        </span>
+        </li>
+        <li class="fragment" data-fragment-index="6">
+        <span>
+            <i>Decoupled from container</i>
+        </span>
+        </li>
+        </ul>
+        </ul>
+        </div>
+        </section>
+        <section>
+            <h1>
+                <br>
+            </h1>
+            <h1>designing and reasoning about systems</h1>
+        </section>
+        <section>
+            <h2>
+                <br>
+            </h2>
+            <h2>optimize decision making</h2>
+            <div>
+                <span style="font-style: italic;">
+                    <br>
+                </span>
+            </div>
+            <div>
+                <span style="font-style: italic;">Postpone decisions until the last possible moment</span>
+                <br>
+            </div>
+            <br>
+        </section>
+        <section>
+            <h2>
+                <br>
+            </h2>
+            <h2>use standards wisely</h2>
+            <div>
+                <br>
+            </div>
+            <i>Over-engineering and obsession with strongly-hyped standards can lead to loss of focus on implementing value&nbsp;</i>
+            <br>
+            <br>
+        </section>
+        <section>
+            <h2>
+                <br>
+            </h2>
+            <h2>domain-specific Languages</h2>
+            <p>
+            <ul>
+                <li class="fragment" data-fragment-index="0">
+                    <span style="text-align: center;">
+                        <i>Convey essential information clearly and concisely</i>
+                    </span>
+                    <br>
+                </li>
+                <li class="fragment" data-fragment-index="1">
+                    <span style="text-align: center;">
+                        <i>Minimize gap between domain concept and code that implements it</i>
+                    </span>
+                </li>
+                    <li class="fragment" data-fragment-index="2">
+                        <span style="text-align: center;">
+                            <i>Optimize communications w/ stakeholders</i>
+                        </span>
+                    </li>
+                    <li class="fragment" data-fragment-index="3">
+                        <span style="text-align: center;">
+                            <i>Reveal intent of code</i>
+                        </span>
+                    </li>
+            </ul>
+        </p>
+        </section>
+        <section>
+            <h2>
+                <br>
+            </h2>
+            <h2>conclusion</h2>
+            <div>
+                <br>
+            </div>
+            <blockquote>
+                <i>Invasive architecture overwhelms domain logic</i>
+            </blockquote>
+            <br>
+            <div>
+                <br>
+            </div>
+            <blockquote>Use the simplest thing that can possibly work</blockquote>
+            <br>
+        </section>
+        <section>
+            <h1>
+                <br>
+            </h1>
+            <h1>
+                <font color="#cc0000">
+                    <span style="font-size: 135.72px;">complexity</span>
+                    <br>
+                </font>
+            </h1>
+            <h1>
+                <font color="#cc0000">kills</font>
+            </h1>
+            <h1>
+                <font color="#cc0000">!</font>
+            </h1>
+        </section>
+        </div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
